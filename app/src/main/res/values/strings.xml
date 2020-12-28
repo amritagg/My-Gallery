@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">My Gallery</string>
+    <string name="title_activity_image">Show Image</string>
+    <string name="delete">delete</string>
+    <string name="info">info</string>
+
+    <string name="image">Image</string>
+    <string name="title_activity_image_full_screen">FullscreenActivity</string>
+    <string name="taken_on">Taken On:</string>
+    <string name="size">Size:</string>
+    <string name="dimensions">Dimensions:</string>
+    <string name="local_path">Local Path:</string>
+    <string name="name">Name:</string>
+</resources>
