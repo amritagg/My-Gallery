@@ -36,34 +36,34 @@ public class ViewImageActivity extends AppCompatActivity {
         viewPager.setCurrentItem(current);
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.bottom, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-
-        if(item.getItemId() == R.id.delete){
-            deleteImage();
-            return true;
-        }else return super.onOptionsItemSelected(item);
-    }
-
-    private void deleteImage() {
-
-        int currentID = viewPager.getCurrentItem();
-        String url_string = image_uris.get(currentID);
-        Uri uri = Uri.parse(url_string);
-        int _id = getContentResolver().delete(
-                uri,
-                null,
-                null
-        );
-        if(_id != 0){
-            Toast.makeText(this, "Image deleted Successfully", Toast.LENGTH_SHORT).show();
-        }
-    }
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        getMenuInflater().inflate(R.menu.bottom, menu);
+//        return true;
+//    }
+//
+//    @Override
+//    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+//
+//        if(item.getItemId() == R.id.delete){
+//            deleteImage();
+//            return true;
+//        }else return super.onOptionsItemSelected(item);
+//    }
+//
+//    private void deleteImage() {
+//
+//        int currentID = viewPager.getCurrentItem();
+//        String url_string = image_uris.get(currentID);
+//        Uri uri = Uri.parse(url_string);
+//        int _id = getContentResolver().delete(
+//                uri,
+//                null,
+//                null
+//        );
+//        if(_id != 0){
+//            Toast.makeText(this, "Image deleted Successfully", Toast.LENGTH_SHORT).show();
+//        }
+//    }
 
 }
