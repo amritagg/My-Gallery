@@ -24,15 +24,15 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/taken_on"
-                android:textSize="24sp"
+                android:textSize="16sp"
                 android:textColor="@android:color/holo_orange_dark"/>
 
             <TextView
                 android:id="@+id/date_taken"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textSize="24sp"
+                android:layout_weight="2"
+                android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
         </LinearLayout>
@@ -48,15 +48,15 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/name"
-                android:textSize="24sp"
+                android:textSize="16sp"
                 android:textColor="@android:color/holo_orange_dark"/>
 
             <TextView
                 android:id="@+id/name"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textSize="24sp"
+                android:layout_weight="2"
+                android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
         </LinearLayout>
@@ -72,15 +72,15 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/size"
-                android:textSize="24sp"
+                android:textSize="16sp"
                 android:textColor="@android:color/holo_orange_dark"/>
 
             <TextView
                 android:id="@+id/size"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textSize="24sp"
+                android:layout_weight="2"
+                android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
         </LinearLayout>
@@ -96,15 +96,15 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/dimensions"
-                android:textSize="24sp"
+                android:textSize="16sp"
                 android:textColor="@android:color/holo_orange_dark"/>
 
             <TextView
                 android:id="@+id/dimensions"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textSize="24sp"
+                android:layout_weight="2"
+                android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
         </LinearLayout>
@@ -120,15 +120,15 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/local_path"
-                android:textSize="24sp"
+                android:textSize="16sp"
                 android:textColor="@android:color/holo_orange_dark"/>
 
             <TextView
                 android:id="@+id/path"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textSize="24sp"
+                android:layout_weight="2"
+                android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
         </LinearLayout>
