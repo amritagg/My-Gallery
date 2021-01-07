@@ -3,21 +3,22 @@ package com.example.mygallery;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.viewpager.widget.ViewPager;
-
+import androidx.viewpager2.widget.CompositePageTransformer;
+import androidx.viewpager2.widget.MarginPageTransformer;
+import androidx.viewpager2.widget.ViewPager2;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
-
 import java.util.ArrayList;
 
 public class ViewImageActivity extends AppCompatActivity {
 
-    ViewPager viewPager;
+    ViewPager2 viewPager;
     ArrayList<String> image_uris;
 
     @Override
@@ -35,9 +36,17 @@ public class ViewImageActivity extends AppCompatActivity {
         viewPager = findViewById(R.id.view_pager);
         ViewPageImageAdapter adapter = new ViewPageImageAdapter(this, image_uris);
 
+        viewPager.setClipToPadding(false);
+        viewPager.setClipChildren(false);
+        viewPager.setOffscreenPageLimit(3);
+        viewPager.getChildAt(0).setOverScrollMode(View.OVER_SCROLL_NEVER);
         viewPager.setAdapter(adapter);
-        viewPager.setPageMargin(100);
+
+        CompositePageTransformer transformer = new CompositePageTransformer();
+        transformer.addTransformer(new MarginPageTransformer(100));
+        viewPager.setPageTransformer(transformer);
         viewPager.setCurrentItem(current);
+
     }
 
     @Override

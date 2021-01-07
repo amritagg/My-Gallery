@@ -2,15 +2,17 @@ package com.example.mygallery;
 
 import android.content.Context;
 import android.net.Uri;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.PagerAdapter;
 import com.bumptech.glide.Glide;
 import java.util.ArrayList;
 
-public class ViewPageImageAdapter extends PagerAdapter {
+public class ViewPageImageAdapter extends RecyclerView.Adapter<ViewPageImageAdapter.ViewHolder> {
 
     private final Context mContext;
     private final ArrayList<String> imageUris;
@@ -20,32 +22,32 @@ public class ViewPageImageAdapter extends PagerAdapter {
         this.imageUris = imageUris;
     }
 
+    @NonNull
     @Override
-    public int getCount() {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(mContext).inflate(R.layout.show_image, parent, false);
+        return new ViewHolder(view);
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        Uri uri = Uri.parse(imageUris.get(position));
+        Glide.with(mContext).load(uri).into(holder.imageView);
+    }
+
+    @Override
+    public int getItemCount() {
         return imageUris.size();
     }
 
-    @Override
-    public boolean isViewFromObject(@NonNull View view, @NonNull Object object) {
-        return view == object;
+    static class ViewHolder extends RecyclerView.ViewHolder {
+
+        ImageView imageView;
+
+        public ViewHolder(@NonNull View itemView) {
+            super(itemView);
+            imageView = itemView.findViewById(R.id.image_view);
+        }
     }
 
-    @NonNull
-    @Override
-    public Object instantiateItem(@NonNull ViewGroup container, int position) {
-
-        ImageView imageView = new ImageView(mContext);
-
-        Uri uri = Uri.parse(imageUris.get(position));
-
-        Glide.with(mContext).load(uri).into(imageView);
-        container.addView(imageView);
-
-        return imageView;
-    }
-
-    @Override
-    public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object) {
-        container.removeView((View)object);
-    }
 }
